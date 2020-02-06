@@ -1,6 +1,5 @@
 # GCloud Web Proxy
-
-An simple http web proxy hosted with gcloud functions.  
+A simple http web proxy hosted with gcloud functions.  
 Best suited for infrequent cross origin requests which would be prohibited by your browser otherwise.
 
 ## Usage
