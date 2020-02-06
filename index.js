@@ -13,14 +13,23 @@ const ACCESS_CONTROL_ALLOW_ORIGIN = '*';
  */
 exports.gcloudWebProxy = async (req, res) => {
 
+  // Uses CORS to allow this proxy to be embedded within webpages
+  res.header("Access-Control-Allow-Origin", ACCESS_CONTROL_ALLOW_ORIGIN);
+
+  // Respond to preflight cors requests
+  if (req.method === 'OPTIONS') {
+    res.set('Access-Control-Allow-Methods', '*');
+    res.set('Access-Control-Allow-Headers', '*');
+    res.set('Access-Control-Max-Age', '3600');
+    res.status(204).send('');
+    return;
+  }
+
   if (!req.query.url) {
     console.log('Request with missing proxy URL parameter.')
     res.status(400).send('Request is missing proxy URL, this should be encoded as a URIComponent and placed within the "url" query parameter.')
     return;
   }
-
-  // Uses CORS to allow this proxy to be embedded within webpages
-  res.header("Access-Control-Allow-Origin", ACCESS_CONTROL_ALLOW_ORIGIN);
 
   try {
     console.log('Request for', req.query.url);
