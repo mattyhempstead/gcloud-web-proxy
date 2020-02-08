@@ -10,7 +10,7 @@ Requests must be of the form
 The url parameter must be encoded as a URIComponent (see JavaScript `encodeURIComponent()`).  
 
 ### Example
-As an example use case, you may wish to embed a script in a webpage which extracts the number of views in a *particular* [YouTube video](https://www.youtube.com/watch?v=dQw4w9WgXcQ) by scraping the HTML returned by YouTube.  
+As an example use case, you may wish to embed a script in a webpage which extracts the number of views of a *particular* [YouTube video](https://www.youtube.com/watch?v=dQw4w9WgXcQ) by scraping the HTML returned by YouTube.  
 Attempting this request directly from the browser would fail due to the Same Origin Policy.  
 
 Instead, using the web proxy we can indirectly fetch the page HTML, and parse it on the client side for the view count.
