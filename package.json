@@ -2,7 +2,7 @@
     "name": "gcloud-web-proxy",
     "version": "0.0.1",
     "dependencies": {
-        "axios": "^0.19.2"
+        "axios": "^0.21.1"
     },
     "scripts": {
         "deploy": "gcloud functions deploy gcloudWebProxy --runtime nodejs10 --trigger-http"
